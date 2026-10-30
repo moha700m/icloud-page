@@ -3,46 +3,62 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>فتح قفل iCloud — الدمام</title>
-<meta name="description" content="فتح قفل iCloud وتجاوز شاشة التنشيط للآيفون والآيباد. فحص مجاني قبل الدفع، وأسعار واضحة.">
+<title>افحص جهازك — justmgz</title>
+<meta name="description" content="اختر موديل جهازك وإصدار النظام، واعرف في ثوانٍ إذا كان ينفك قفل iCloud أو لا، وكم السعر.">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0A0E13;--card:#101821;--line:#1E2A36;--txt:#EAF1F7;--mut:#8FA0B3;--acc:#38BDF8;--ok:#34D399;--warn:#F5B84D;--bad:#F87171}
 *{box-sizing:border-box}
 body{margin:0;background:radial-gradient(800px 420px at 90% -10%,#12202e,transparent 60%),var(--bg);
 color:var(--txt);font-family:'Tajawal',system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
-.wrap{max-width:600px;margin:0 auto;padding:20px 18px 96px}
-.brand{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.wrap{max-width:600px;margin:0 auto;padding:20px 18px 124px}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.mark{width:40px;height:40px;border-radius:12px;background:#122130;border:2px solid #1f4a63;display:grid;place-items:center;color:var(--acc);font-weight:800;font-size:20px}
 .brand>div:last-child{display:flex;flex-direction:column;justify-content:center;gap:3px}
-.mark{width:40px;height:40px;font-size:20px;border-radius:12px;background:#122130;border:2px solid #1f4a63;display:grid;place-items:center;color:var(--acc);font-weight:800}
-.brand b{font-size:17px;line-height:1.1}
-.brand .wordmark{font-family:"Tajawal",system-ui,sans-serif;font-size:19px;font-weight:800;letter-spacing:.6px;line-height:1.1;direction:ltr;unicode-bidi:isolate}
-.brand small{display:block;color:var(--mut);font-size:12px;font-weight:400;line-height:1.2}
-h1{font-size:clamp(24px,7vw,31px);line-height:1.35;margin:0 0 10px}
+.wordmark{font-size:19px;font-weight:800;letter-spacing:.6px;line-height:1.1;direction:ltr;unicode-bidi:isolate}
+.brand small{color:var(--mut);font-size:12px;font-weight:400;line-height:1.2}
+h1{font-size:clamp(23px,6.6vw,30px);line-height:1.35;margin:0 0 8px}
 h1 span{color:var(--acc)}
-.lead{color:var(--mut);font-size:15px;margin:0 0 22px}
+.lead{color:var(--mut);font-size:14.5px;margin:0 0 18px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px}
-h2{font-size:14px;color:var(--mut);font-weight:700;margin:0 0 12px;letter-spacing:.2px}
-.price{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid #17222c;font-size:15px}
-.price:last-child{border:0;padding-bottom:0}
-.price b{font-size:19px;font-weight:800;color:var(--txt)}
-.price b.free{color:var(--ok)}
-.price em{font-style:normal;color:var(--mut);font-size:12.5px;display:block;margin-top:2px}
-.chips{display:flex;flex-wrap:wrap;gap:7px}
-.chip{font-size:12.5px;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:#0b1219;color:var(--txt)}
-.chip.no{color:#f0a7a7;border-color:#3a2222;background:#1a1010}
-.chip.mid{color:#f0d29a;border-color:#3d3420;background:#1a160e}
-.two{display:grid;gap:14px}
-.note{font-size:12.5px;color:var(--mut);margin:10px 0 0}
+label.lb{display:block;font-size:12.5px;color:var(--mut);margin:0 0 6px;font-weight:500}
+select{width:100%;direction:rtl;appearance:none;padding:13px 14px;border-radius:12px;border:1px solid var(--line);
+background:#0b1219 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238FA0B3' stroke-width='2.5'><path d='M6 9l6 6 6-6'/></svg>") no-repeat left 14px center;
+color:var(--txt);font-family:inherit;font-size:16px;outline:none;margin-bottom:12px}
+select:focus{border-color:#2a6b8a;box-shadow:0 0 0 3px #38bdf822}
+.go{width:100%;padding:15px;border:0;border-radius:13px;cursor:pointer;font-family:inherit;font-size:16.5px;font-weight:800;
+background:linear-gradient(180deg,#3ec3f8,#1f9fd8);color:#04212e;transition:.2s}
+.go:hover{filter:brightness(1.06)}
+#result{display:none}
+#result.show{display:block;animation:up .25s ease both}
+@keyframes up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.res{border-radius:16px;border:1px solid;padding:16px;margin-bottom:14px}
+.res.ok{background:#0d2119;border-color:#1c5c45}
+.res.warn{background:#221c0e;border-color:#5c4a1c}
+.res.bad{background:#221111;border-color:#5c2323}
+.res.todo{background:#101a26;border-color:#24455c}
+.badge{display:inline-flex;gap:7px;align-items:center;font-size:12.5px;font-weight:700;padding:5px 11px;border-radius:999px;background:#ffffff12;margin-bottom:10px}
+.res h3{margin:0 0 4px;font-size:19px;line-height:1.4}
+.res p{margin:8px 0 0;font-size:14px;color:#d5e3ef}
+.price{margin-top:12px;font-size:24px;font-weight:800;display:flex;flex-direction:column;gap:1px}
+.price small{font-size:12.5px;color:var(--mut);font-weight:500;line-height:1.4}
+.wa{display:block;text-align:center;margin-top:12px;padding:13px;border-radius:12px;text-decoration:none;
+background:#1f2b36;border:1px solid #2c3d4c;color:var(--txt);font-weight:700;font-size:15px}
+.wa:hover{background:#26333f}
+h2{font-size:13.5px;color:var(--mut);font-weight:700;margin:0 0 10px}
+.row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid #17222c;font-size:14.5px}
+.row:last-child{border:0;padding-bottom:0}
+.row b{font-size:17px}
+.row .free{color:var(--ok)}
+.row em{font-style:normal;color:var(--mut);font-size:12px;display:block}
+.note{font-size:12.5px;color:var(--mut);margin:10px 0 0;line-height:1.6}
+footer{color:var(--mut);font-size:12px;text-align:center;margin-top:4px}
+.tel{display:inline-block;font-size:17px;font-weight:800;color:var(--txt);text-decoration:none;letter-spacing:.4px;margin-bottom:4px;direction:ltr;unicode-bidi:isolate}
+.tel:hover{color:var(--acc)}
 .cta{position:fixed;right:0;left:0;bottom:0;padding:12px 18px calc(12px + env(safe-area-inset-bottom));
 background:linear-gradient(180deg,#0a0e13dd,#0a0e13);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
 .cta a{display:block;max-width:600px;margin:0 auto;text-align:center;padding:14px;border-radius:13px;
 background:linear-gradient(180deg,#3ec3f8,#1f9fd8);color:#04212e;font-weight:800;text-decoration:none;font-size:16px}
-footer{color:var(--mut);font-size:12px;text-align:center;margin-top:6px}
-.tel{display:inline-block;font-size:17px;font-weight:800;color:var(--txt);text-decoration:none;
-letter-spacing:.4px;margin-bottom:4px;direction:ltr;unicode-bidi:isolate}
-.tel:hover{color:var(--acc)}
-@media(min-width:640px){.two{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -50,47 +66,183 @@ letter-spacing:.4px;margin-bottom:4px;direction:ltr;unicode-bidi:isolate}
 
   <div class="brand">
     <div class="mark">j</div>
-    <div><b class="wordmark" dir="ltr">justmgz</b><small>فتح قفل iCloud — الدمام</small></div>
+    <div><span class="wordmark" dir="ltr">justmgz</span><small>فتح قفل iCloud — الدمام</small></div>
   </div>
 
-  <h1>نفتح قفل iCloud <span>قدامك</span>، وتجرب الجهاز قبل ما تدفع</h1>
-  <p class="lead">آيفون وآيباد · شغل منفّذ على أجهزة كثيرة · فحص مجاني أولاً</p>
+  <h1>اعرف إذا جهازك <span>ينفك</span> — قبل ما تدفع</h1>
+  <p class="lead">اختر موديل جهازك وإصدار النظام، وتعرف النتيجة في ثواني.</p>
+
+  <div class="card">
+    <label class="lb" for="model">موديل الجهاز</label>
+    <select id="model">
+      <option value="">اختر الموديل</option>
+      <optgroup label="آيفون">
+        <option data-p="wifi" data-k="A7">iPhone 5s</option>
+        <option data-p="wifi" data-k="A8">iPhone 6</option>
+        <option data-p="wifi" data-k="A8">iPhone 6 Plus</option>
+        <option data-p="full" data-k="A9">iPhone 6s</option>
+        <option data-p="full" data-k="A9">iPhone 6s Plus</option>
+        <option data-p="full" data-k="A9">iPhone SE 1</option>
+        <option data-p="full" data-k="A10">iPhone 7</option>
+        <option data-p="full" data-k="A10">iPhone 7 Plus</option>
+        <option data-p="full" data-k="A11">iPhone 8</option>
+        <option data-p="full" data-k="A11">iPhone 8 Plus</option>
+        <option data-p="full" data-k="A11">iPhone X</option>
+        <option data-p="cond" data-k="A12">iPhone XR</option>
+        <option data-p="cond" data-k="A12">iPhone XS</option>
+        <option data-p="cond" data-k="A12">iPhone XS Max</option>
+        <option data-p="cond" data-k="A13">iPhone 11</option>
+        <option data-p="cond" data-k="A13">iPhone 11 Pro</option>
+        <option data-p="cond" data-k="A13">iPhone 11 Pro Max</option>
+        <option data-p="cond" data-k="A13">iPhone SE 2</option>
+        <option data-p="cond" data-k="A14">iPhone 12 mini</option>
+        <option data-p="cond" data-k="A14">iPhone 12</option>
+        <option data-p="cond" data-k="A14">iPhone 12 Pro</option>
+        <option data-p="cond" data-k="A14">iPhone 12 Pro Max</option>
+        <option data-p="cond" data-k="A15">iPhone 13 mini</option>
+        <option data-p="cond" data-k="A15">iPhone 13</option>
+        <option data-p="cond" data-k="A15">iPhone 13 Pro</option>
+        <option data-p="cond" data-k="A15">iPhone 13 Pro Max</option>
+        <option data-p="cond" data-k="A15">iPhone SE 3</option>
+        <option data-p="cond" data-k="A15">iPhone 14</option>
+        <option data-p="cond" data-k="A15">iPhone 14 Plus</option>
+        <option data-p="cond" data-k="A16">iPhone 14 Pro</option>
+        <option data-p="cond" data-k="A16">iPhone 14 Pro Max</option>
+        <option data-p="cond" data-k="A16">iPhone 15</option>
+        <option data-p="cond" data-k="A16">iPhone 15 Plus</option>
+        <option data-p="cond" data-k="A17">iPhone 15 Pro</option>
+        <option data-p="cond" data-k="A17">iPhone 15 Pro Max</option>
+        <option data-p="no" data-k="A18">iPhone 16</option>
+        <option data-p="no" data-k="A18">iPhone 16 Plus</option>
+        <option data-p="no" data-k="A18">iPhone 16 Pro</option>
+        <option data-p="no" data-k="A18">iPhone 16 Pro Max</option>
+        <option data-p="no" data-k="A18">iPhone 16e</option>
+      </optgroup>
+      <optgroup label="آيباد">
+        <option data-p="wifi" data-k="A7">iPad Air 1</option>
+        <option data-p="wifi" data-k="A7">iPad mini 2</option>
+        <option data-p="wifi" data-k="A7">iPad mini 3</option>
+        <option data-p="wifi" data-k="A8X">iPad Air 2</option>
+        <option data-p="wifi" data-k="A8">iPad mini 4</option>
+        <option data-p="full" data-k="A9X">iPad Pro 9.7</option>
+        <option data-p="full" data-k="A9X">iPad Pro 12.9 (1)</option>
+        <option data-p="full" data-k="A9">iPad 5</option>
+        <option data-p="full" data-k="A10X">iPad Pro 10.5</option>
+        <option data-p="full" data-k="A10X">iPad Pro 12.9 (2)</option>
+        <option data-p="full" data-k="A10">iPad 6</option>
+        <option data-p="cond" data-k="A10">iPad 7</option>
+        <option data-p="cond" data-k="A12">iPad Air 3</option>
+        <option data-p="cond" data-k="A12">iPad mini 5</option>
+        <option data-p="cond" data-k="A12">iPad 8</option>
+        <option data-p="cond" data-k="A13">iPad 9</option>
+        <option data-p="cond" data-k="A14">iPad Air 4</option>
+        <option data-p="cond" data-k="A14">iPad 10</option>
+        <option data-p="cond" data-k="A15">iPad mini 6</option>
+        <option data-p="todo" data-k="M1">iPad Air 5 / M1</option>
+        <option data-p="todo" data-k="M">iPad Pro 11 (M1/M2)</option>
+        <option data-p="todo" data-k="M">iPad Pro 12.9 (M1/M2)</option>
+      </optgroup>
+    </select>
+
+    <label class="lb" for="ios">إصدار النظام</label>
+    <select id="ios">
+      <option value="">اختر الإصدار</option>
+      <option>12</option><option>13</option><option>14</option><option>15</option><option>16</option>
+      <option>17</option><option>18</option><option>26.0</option><option>26.1</option>
+      <option value="26.2+">26.2 أو أحدث</option>
+    </select>
+
+    <button class="go" id="go">افحص جهازي</button>
+  </div>
+
+  <div id="result"></div>
 
   <div class="card">
     <h2>الأسعار</h2>
-    <div class="price"><span>فحص وتقرير<em>تعرف جهازك مدعوم أو لا</em></span><b class="free">مجاناً</b></div>
-    <div class="price"><span>مع الحفاظ على الشبكة<em>أجهزة 6s حتى X</em></span><b>150</b></div>
-    <div class="price"><span>أجهزة XR وأحدث<em>بعد التأكد من القابلية</em></span><b>200</b></div>
-  </div>
-
-  <div class="two">
-    <div class="card">
-      <h2>مدعوم</h2>
-      <div class="chips">
-        <span class="chip">iPhone 5s – 15 Pro Max</span>
-        <span class="chip">iPad Air 1 وأحدث</span>
-        <span class="chip">iOS 12 – 26.1</span>
-        <span class="chip mid">XR وأحدث: يحتاج إنترنت</span>
-        <span class="chip mid">5s و 6: بدون شبكة</span>
-      </div>
-    </div>
-    <div class="card">
-      <h2>غير مدعوم</h2>
-      <div class="chips">
-        <span class="chip no">iPhone 16 وأحدث</span>
-        <span class="chip no">iOS 26.2 وأحدث</span>
-        <span class="chip no">أجهزة بدون إثبات ملكية</span>
-      </div>
-      <p class="note">الشرط الوحيد: إثبات ملكية الجهاز (فاتورة، علبة، أو حساب iCloud باسمك).</p>
-    </div>
+    <div class="row"><span>فحص وتقرير<em>تعرف جهازك مدعوم أو لا</em></span><b class="free">مجاناً</b></div>
+    <div class="row"><span>تجاوز مع الحفاظ على الشبكة<em>أجهزة 6s حتى X</em></span><b>150</b></div>
+    <div class="row"><span>أجهزة XR وأحدث<em>بعد التأكد من القابلية</em></span><b>200</b></div>
+    <p class="note">الشرط: إثبات ملكية الجهاز · المدة من ربع ساعة إلى 45 دقيقة · توصيل أرامكس</p>
   </div>
 
   <footer>
     <a class="tel" href="tel:+966555451547" dir="ltr">0555451547</a>
-    <div>اتصال أو واتساب · المدة من ربع ساعة إلى 45 دقيقة · توصيل أرامكس</div>
+    <div>اتصال أو واتساب</div>
   </footer>
 </div>
 
-<div class="cta"><a href="https://wa.me/966555451547?text=%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D9%81%D8%AD%D8%B5%20%D8%AC%D9%87%D8%A7%D8%B2%D9%8A">أرسل موديل جهازك على واتساب</a></div>
+<div class="cta"><a href="#model" id="ctaLink">افحص جهازي</a></div>
+
+<script>
+var PRICE = {wifi:150, full:150, cond:200, todo:200};
+var PHONE = "966555451547";
+
+function check(){
+  var sel = document.getElementById("model");
+  var opt = sel.options[sel.selectedIndex];
+  var ios = document.getElementById("ios").value;
+  var box = document.getElementById("result");
+  var name = opt.value ? opt.textContent : "";
+
+  if(!name){
+    box.className = "show";
+    box.innerHTML = '<div class="res todo"><div class="badge">● ناقص خطوة</div><h3>اختر موديل جهازك</h3><p>اختر الموديل من القائمة، بعدها يطلع لك الحكم.</p></div>';
+    return;
+  }
+  if(!ios){
+    box.className = "show";
+    box.innerHTML = '<div class="res todo"><div class="badge">● ناقص خطوة</div><h3>اختر إصدار النظام</h3><p>الإصدار يفرق كثير — تقدر تعرفه من الإعدادات ← عام ← حول.</p></div>';
+    return;
+  }
+
+  var p = opt.getAttribute("data-p"), k = opt.getAttribute("data-k");
+  var num = ios === "26.2+" ? 26.2 : parseFloat(ios);
+  var r;
+
+  if(num >= 26.2){
+    r = {c:"bad", b:"غير مدعوم حالياً", t:"إصدارك أحدث من المدعوم",
+      d:"الحد الحالي iOS 26.1، وأحدث منه غير مدعوم. ما آخذ منك ريال على جهاز ما أقدر أفتحه.", price:null};
+  } else if(p === "no"){
+    r = {c:"bad", b:"غير مدعوم", t:"هذا الموديل ما ينفك حالياً",
+      d:"معالجات A18 (iPhone 16 وما بعده) ما يوجد لها تجاوز حالياً. الفحص مجاني لكن النتيجة سلبية.", price:null};
+  } else if(p === "todo"){
+    r = {c:"todo", b:"يحتاج تقييم", t:"جهازك جديد — يبغى تجربة عليه",
+      d:"أجهزة M-series تحتاج اتصال وتجربة على الجهاز نفسه. الفحص مجاني وأجزم لك قبل أي دفع.", price:PRICE.todo};
+  } else if(p === "wifi"){
+    r = {c:"warn", b:"ينفك — بدون شبكة", t:"جهازك ينفك، لكن الشبكة ما تعمل",
+      d:"معالج " + k + " يفقد الشريحة بعد التجاوز، ويبقى الواي فاي شغّال.", price:PRICE.wifi};
+  } else if(p === "full"){
+    r = {c:"ok", b:"ينفك — والشبكة تعمل", t:"جهازك من أفضل الأجهزة لهذه الخدمة",
+      d:"معالج " + k + " يتجاوز القفل، والشبكة والواي فاي يشتغلون بعد التجاوز.", price:PRICE.full};
+  } else {
+    r = {c:"warn", b:"ينفك بشرط", t:"ينفك، لكن يحتاج إنترنت والنتيجة غير مضمونة",
+      d:"معالج " + k + " يحتاج اتصال بالسيرفر وقت التنشيط. نفحصه أول، وإذا ما كان قابل أقول لك قبل ما تدفع.", price:PRICE.cond};
+  }
+
+  var waHref = "https://wa.me/" + PHONE + "?text=" +
+       encodeURIComponent("مرحبا، جهازي " + name + " — iOS " + ios + "، أبغى أتأكد إذا ينفك");
+  var h = '<div class="res ' + r.c + '">';
+  h += '<div class="badge">● ' + r.b + '</div>';
+  h += '<h3>' + r.t + '</h3>';
+  h += '<p>' + name + ' · iOS ' + ios + '<br>' + r.d + '</p>';
+  if(r.price) h += '<div class="price">' + r.price + ' ريال<small>يشمل الفحص والتجاوز</small></div>';
+  h += '<a class="wa" target="_blank" rel="noopener" href="' + waHref + '">أرسل التفاصيل على واتساب</a></div>';
+  box.className = "show";
+  box.innerHTML = h;
+  ctaLink.dataset.mode = "wa";
+  ctaLink.href = waHref;
+  ctaLink.target = "_blank";
+  ctaLink.textContent = "أرسل على واتساب";
+  box.scrollIntoView({behavior:"smooth", block:"center"});
+}
+
+var ctaLink = document.getElementById("ctaLink");
+document.getElementById("go").addEventListener("click", check);
+ctaLink.addEventListener("click", function(e){
+  if(ctaLink.dataset.mode === "wa") return;
+  e.preventDefault();
+  document.getElementById("model").scrollIntoView({behavior:"smooth", block:"center"});
+});
+</script>
 </body>
 </html>
