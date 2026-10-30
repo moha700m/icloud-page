@@ -12,10 +12,12 @@
 body{margin:0;background:radial-gradient(800px 420px at 90% -10%,#12202e,transparent 60%),var(--bg);
 color:var(--txt);font-family:'Tajawal',system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
 .wrap{max-width:600px;margin:0 auto;padding:20px 18px 96px}
-.brand{display:flex;align-items:center;gap:11px;margin-bottom:26px}
-.mark{width:40px;height:40px;border-radius:12px;background:#122130;border:2px solid #1f4a63;display:grid;place-items:center;color:var(--acc);font-weight:800}
-.brand b{font-size:17px}
-.brand small{display:block;color:var(--mut);font-size:12px;font-weight:400}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.brand>div:last-child{display:flex;flex-direction:column;justify-content:center;gap:3px}
+.mark{width:40px;height:40px;font-size:20px;border-radius:12px;background:#122130;border:2px solid #1f4a63;display:grid;place-items:center;color:var(--acc);font-weight:800}
+.brand b{font-size:17px;line-height:1.1}
+.brand .wordmark{font-family:"Tajawal",system-ui,sans-serif;font-size:19px;font-weight:800;letter-spacing:.6px;line-height:1.1;direction:ltr;unicode-bidi:isolate}
+.brand small{display:block;color:var(--mut);font-size:12px;font-weight:400;line-height:1.2}
 h1{font-size:clamp(24px,7vw,31px);line-height:1.35;margin:0 0 10px}
 h1 span{color:var(--acc)}
 .lead{color:var(--mut);font-size:15px;margin:0 0 22px}
@@ -47,8 +49,8 @@ letter-spacing:.4px;margin-bottom:4px;direction:ltr;unicode-bidi:isolate}
 <div class="wrap">
 
   <div class="brand">
-    <div class="mark">t</div>
-    <div><b>tr4mpass</b><small>فتح قفل iCloud — الدمام</small></div>
+    <div class="mark">j</div>
+    <div><b class="wordmark" dir="ltr">justmgz</b><small>فتح قفل iCloud — الدمام</small></div>
   </div>
 
   <h1>نفتح قفل iCloud <span>قدامك</span>، وتجرب الجهاز قبل ما تدفع</h1>
